@@ -4,7 +4,7 @@ chrome.contextMenus.removeAll();
 
 chrome.contextMenus.create({
   id: "ujournal-to-gpt",
-  title: "Open in ChatGPT with Prompt",
+  title: "Send to ChatGPT with Prompt",
   contexts: ["all"],
 });
 
