@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const prevText = button.innerText;
 
-    button.innerText = "Saved!";
+    button.innerText = "Done";
 
     setTimeout(() => {
       button.innerText = prevText;
