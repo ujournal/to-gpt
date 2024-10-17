@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById("settings-form");
+  const button = document.getElementById("settings-button");
 
   const settings = await chrome.storage.sync.get(["prompt"]);
 
@@ -12,6 +13,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await chrome.storage.sync.set(data);
 
-    alert("Saved!");
+    const prevText = button.innerText;
+
+    button.innerText = "Saved!";
+
+    setTimeout(() => {
+      button.innerText = prevText;
+    }, 2000);
   };
 });
