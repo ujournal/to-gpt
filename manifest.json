@@ -1,7 +1,7 @@
 {
-  "name": "UJournal to GPT",
+  "name": "Send to GPT",
   "version": "1.0.0",
-  "description": "Open link in GPT with Prompt",
+  "description": "Send link to GPT with Prompt",
   "manifest_version": 3,
   "author": "Maslakov Oleksandr",
   "action": {
