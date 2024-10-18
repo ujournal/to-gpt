@@ -1,4 +1,6 @@
-const DEFAULT_PROMPT = `Express what you see on the page:`;
+const DEFAULT_PROMPT =
+  "Summarize information (1 paragraph and list of theses) from the news:";
+const DEFAULT_MODEL = "gpt-4o";
 
 chrome.contextMenus.removeAll();
 
@@ -11,9 +13,12 @@ chrome.contextMenus.create({
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (info.menuItemId == "send-to-gpt") {
     const settings = await chrome.storage.sync.get("prompt");
+    const prompt = settings.prompt || DEFAULT_PROMPT;
+    const model = settings.model || DEFAULT_MODEL;
 
     const params = new URLSearchParams({
-      q: `${settings.prompt || DEFAULT_PROMPT} ${tab.url}`,
+      q: `${prompt} ${tab.url}`,
+      model,
     });
 
     const url = `https://chatgpt.com/?${params}`;

@@ -17,6 +17,16 @@
                 width: 40rem;
             }
 
+            select {
+                font-family: inherit;
+                font-size: inherit;
+                padding: 0.75rem;
+                border-radius: 0.5rem;
+                background-color: white;
+                border: 1px solid silver;
+                color: black;
+            }
+
             textarea {
                 font-family: inherit;
                 font-size: inherit;
@@ -45,6 +55,11 @@
     </head>
     <body>
         <form id="settings-form">
+            <select name="model">
+                <option>gpt-4o</option>
+                <option>gpt-4o-mini</option>
+                <option>gpt-3.5</option>
+            </select>
             <textarea name="prompt" placeholder="Prompt" rows="10"></textarea>
             <button id="settings-button">Save</button>
         </form>

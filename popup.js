@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const settings = await chrome.storage.sync.get(["prompt"]);
 
-  form.elements.prompt.value = settings.prompt || "";
+  form.elements.model.value = String(settings.model || "gpt-4o");
+  form.elements.prompt.value = String(settings.prompt || "");
 
   form.onsubmit = async (event) => {
     event.preventDefault();
